@@ -1,75 +1,78 @@
-#include "main.h"
 #include <stdarg.h>
 #include <unistd.h>
-
+#include "main.h"
 /**
- * _putchar - Writes a character to stdout.
- * @c: The character to be written.
- * Return: On success, 1 is returned. On error, -1 is returned.
- */
-int _putchar(char c) {
-    return write(1, &c, 1);
-}
+  * find_function - function that finds formats for _printf
+  * calls the corresponding function.
+  * @format: format (char, string, int, decimal)
+  * Return: NULL or function associated ;
+  */
+int (*find_function(const char *format))(va_list)
+{
+	unsigned int i = 0;
+	code_f find_f[] = {
+		{"c", print_char},
+		{"s", print_string},
+		{"i", print_int},
+		{"d", print_dec},
+		{"r", print_rev},
+		{"b", print_bin},
+		{"u", print_unsig},
+		{"o", print_octal},
+		{"x", print_x},
+		{"X", print_X},
+		{"R", print_rot13},
+		{NULL, NULL}
+	};
 
+	while (find_f[i].sc)
+	{
+		if (find_f[i].sc[0] == (*format))
+			return (find_f[i].f);
+		i++;
+	}
+	return (NULL);
+}
 /**
- * _printf - Custom printf function.
- * @format: The format string.
- * Return: The number of characters printed (excluding the null byte).
- */
-int _printf(const char *format, ...) {
-    int count = 0;
-    va_list args;
+  * _printf - function that produces output according to a format.
+  * @format: format (char, string, int, decimal)
+  * Return: size the output text;
+  */
+int _printf(const char *format, ...)
+{
+	va_list ap;
+	int (*f)(va_list);
+	unsigned int i = 0, cprint = 0;
 
-    va_start(args, format);
-
-    while (*format) {
-        if (*format == '%') {
-            format++;
-            if (*format == '\0') {
-                break; // Handle case where '%' is at the end of the format string
-            }
-
-            if (*format == 'c') {
-                count += _putchar(va_arg(args, int));
-            } else if (*format == 's') {
-                char *str = va_arg(args, char*);
-                if (str == NULL) str = "(null)";
-                while (*str) count += _putchar(*str++);
-            } else if (*format == 'd' || *format == 'i') {
-                int num = va_arg(args, int);
-                int temp = num;
-
-                if (num < 0) {
-                    count += _putchar('-');
-                    temp = -temp;
-                }
-
-                int length = 0;
-                while (temp != 0) {
-                    length++;
-                    temp /= 10;
-                }
-
-                while (length > 0) {
-                    int divisor = 1;
-                    for (int i = 1; i < length; i++) {
-                        divisor *= 10;
-                    }
-
-                    count += _putchar((num / divisor) + '0');
-                    num %= divisor;
-                    length--;
-                }
-            }
-        } else {
-            count += _putchar(*format);
-        }
-
-        format++;
-    }
-
-    va_end(args);
-
-    return count;
+	if (format == NULL)
+		return (-1);
+	va_start(ap, format);
+	while (format[i])
+	{
+		while (format[i] != '%' && format[i])
+		{
+			_putchar(format[i]);
+			cprint++;
+			i++;
+		}
+		if (format[i] == '\0')
+			return (cprint);
+		f = find_function(&format[i + 1]);
+		if (f != NULL)
+		{
+			cprint += f(ap);
+			i += 2;
+			continue;
+		}
+		if (!format[i + 1])
+			return (-1);
+		_putchar(format[i]);
+		cprint++;
+		if (format[i + 1] == '%')
+			i += 2;
+		else
+			i++;
+	}
+	va_end(ap);
+	return (cprint);
 }
-
