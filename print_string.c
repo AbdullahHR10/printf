@@ -10,7 +10,7 @@
 
 int print_string(char *s)
 {
-	int i, count;
+	int i, count = 0;
 
 	if (s == NULL)
 	{
