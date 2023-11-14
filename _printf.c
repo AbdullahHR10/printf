@@ -25,14 +25,14 @@ int _printf(const char *format, ...)
 			count++;
 			if (*format == 'c')
 			{
-				_putchar(va_arg(args,int));
+				_putchar(va_arg(args, int));
 				count++;
 			}
 			else if (*format == 's')
 			{
 				while (*str != '\0')
 				{
-					_putchar(*str);
+					print_string(*str);
 					str++;
 					count++;
 				}
