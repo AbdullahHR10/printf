@@ -15,7 +15,6 @@ int _printf(const char *format, ...) {
         if (*format == '%') {
             format++;
             if (*format == '\0') {
-                // Handle case where '%' is at the end of the format string
                 break;
             }
 
@@ -34,7 +33,6 @@ int _printf(const char *format, ...) {
             } else if (*format == '%') {
                 count += _putchar('%');
             } else {
-                // Unsupported specifier, treat it as a regular character
                 count += _putchar('%');
                 count += _putchar(*format);
             }
