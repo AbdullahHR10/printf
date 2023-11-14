@@ -5,6 +5,7 @@
 /**
  * _printf - custom printf function
  * @format: format
+ * Return: Count
  */
 
 int _printf(const char *format, ...)
