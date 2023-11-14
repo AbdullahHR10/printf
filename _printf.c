@@ -1,3 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "main.h"
+
+/**
+ * _printf - custom printf function
+ * @format: format
+ * Return: Count
+ */
 int _printf(const char *format, ...)
 {
     int count = 0;
