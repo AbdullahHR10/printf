@@ -1,9 +1,9 @@
-#ifndef MAIN_HEADER
-#define MAIN_HEADER
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
-int _putchar(char c);
-int _printf(const char *format, ...);
-int print_string(char *s);
 
-#endif
+int _printf(const char *format, ...);
+
+#endif /* MAIN_H */
+
