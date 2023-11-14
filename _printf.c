@@ -30,18 +30,19 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				while (*str != '\0')
+				str = va_arg(args, char*);
+				if (str == NULL)
 				{
-					print_string(str);
-					str++;
-					count++;
+					str = "(null)";
 				}
+				count += print_string(str);
 			}
 
 		}
 		else
 		{
-			_putchar(*format);
+			_putchar('%');
+			count++;
 		}
 		format++;
 	}
