@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			{
 				while (*str != '\0')
 				{
-					print_string(*str);
+					print_string(str);
 					str++;
 					count++;
 				}

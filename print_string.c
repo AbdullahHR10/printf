@@ -8,7 +8,7 @@
  * Return: count
  */
 
-int print_string(char *s);
+int print_string(char *s)
 {
 	int i, count;
 
