@@ -21,6 +21,12 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if (*format == '\0')
+			{
+				_putchar('%');
+				count++;
+				break;
+			}
 			switch (*format)
 			{
 				case 'c':
