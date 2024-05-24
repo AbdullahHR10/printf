@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			switch (*format) {
+			switch (*format)
+			{
 				case 'c':
 					count += print_char(va_arg(args, int));
 					break;
@@ -39,7 +40,8 @@ int _printf(const char *format, ...)
 					_putchar(*format);
 					count += 2;
 			}
-		} else {
+		} else
+		{
 			_putchar(*format);
 			count++;
 		}
