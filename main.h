@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stddef.h>
 
+int _putchar(char c);
 char print_char(char c);
 int print_int(int i);
 char* print_string(char *s);
