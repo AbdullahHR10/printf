@@ -7,7 +7,7 @@
  * Return: Nothing
  */
 
-char print_char(char c)
+void print_char(char c)
 {
 	putchar(c);
 }
