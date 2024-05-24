@@ -4,10 +4,10 @@
  * print_int - Prints an integer for a custom printf function
  * @i: Integer to be printed
  *
- * Return: Nothing
+ * Return: Number of digits
  */
 
-void print_int(int i)
+int print_int(int i)
 {
 	int count = 0, digits[10], j;
 
@@ -25,4 +25,5 @@ void print_int(int i)
 	{
 		_putchar(digits[j] + '0');
 	}
+	return (count);
 }

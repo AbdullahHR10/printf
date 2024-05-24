@@ -4,7 +4,7 @@
  * print_string - Prints a string for a custom printf function
  * @s: String to be printed
  *
- * Return: Nothing
+ * Return: String length
  */
 
 int print_string(char *s)
