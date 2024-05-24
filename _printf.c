@@ -37,6 +37,9 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					count++;
 					break;
+				case '\0':
+					_putchar('%';
+					break;
 				default:
 					_putchar('%');
 					_putchar(*format);
