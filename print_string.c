@@ -7,10 +7,15 @@
  * Return: Nothing
  */
 
-void print_string(char *s)
+int print_string(char *s)
 {
-	int i;
+	int count = 0;
 
-	for (i = 0; i < strlen(s); i++)
-		_putchar(s[i]);
+	while (*s)
+	{
+		_putchar(*s);
+		count++;
+		s++;
+	}
+	return(count);
 }
