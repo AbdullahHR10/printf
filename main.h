@@ -7,9 +7,9 @@
 #include <stddef.h>
 
 int _putchar(char c);
-char print_char(char c);
-int print_int(int i);
-char* print_string(char *s);
-float print_inti(float i);
+void print_char(char c);
+void print_int(int i);
+void print_string(char *s);
+void print_inti(float i);
 
 #endif
