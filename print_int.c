@@ -15,7 +15,7 @@ int print_int(int i)
 		_putchar('-');
 	if (i == 0)
 		_putchar('0');
-	while(i != 0)
+	while (i != 0)
 	{
 		digits[count] = i % 10;
 		i /= 10;

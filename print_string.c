@@ -17,5 +17,5 @@ int print_string(char *s)
 		count++;
 		s++;
 	}
-	return(count);
+	return (count);
 }
