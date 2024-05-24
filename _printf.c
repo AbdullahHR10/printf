@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 						break;
 					default:
 						_putchar(*format);
-						count += 2;
+						count += 1;
 			}
 			}
 			else
