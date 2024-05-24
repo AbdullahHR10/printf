@@ -5,11 +5,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
+#include <stdarg.h>
 
 int _putchar(char c);
-void print_char(char c);
-void print_int(int i);
-void print_string(char *s);
-void print_inti(float i);
+int print_char(char c);
+int print_int(int i);
+int print_string(char *s);
+int _printf(const char *format, ...);
 
 #endif
