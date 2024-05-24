@@ -30,6 +30,10 @@ int _printf(const char *format, ...)
 				case 'i':
 					count += print_int (va_arg(args, int));
 					break;
+				case '%':
+					_putchar('%');
+					count++;
+					break;
 				default:
 					_putchar('%');
 					_putchar(*format);
