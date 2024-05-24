@@ -4,10 +4,11 @@
  * print_char - Prints a character for a custom printf function
  * @c: character to be printed
  *
- * Return: Nothing
+ * Return: 1
  */
 
-void print_char(char c)
+int print_char(char c)
 {
 	_putchar(c);
+	return (1);
 }
