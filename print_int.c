@@ -12,6 +12,7 @@ int print_int(int i)
 	int count = 0, index = 0;
 	unsigned int n;
 	char buffer[10];
+
 	if (i < 0)
 	{
 		_putchar('-');
