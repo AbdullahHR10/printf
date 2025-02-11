@@ -4,7 +4,7 @@
  * print_octal - Prints an integer that is converted to octal in _printf.
  *
  * @args: list of args.
- * Return: The length of the integer (binary).
+ * Return: The length of the integer (octal).
  */
 
 int print_octal(va_list *args) {
