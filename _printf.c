@@ -5,6 +5,7 @@ format_specifier_t specifiers[] = {
     {'s', print_string},
     {'d', print_int}, {'i', print_int},
     {'b', print_binary},
+    {'u', print_unsigned},
     {0, NULL}
 };
 
