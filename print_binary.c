@@ -8,10 +8,11 @@
  */
 
 int print_binary(va_list *args) {
-    int num, int_count = 0, index = 0;
-    char buffer[8];
+    unsigned int num;
+    int int_count = 0, index = 0;
+    char buffer[32];
 
-    num = va_arg(*args, int);
+    num = va_arg(*args, unsigned int);
 
     if (num == 0)
     {
@@ -22,7 +23,6 @@ int print_binary(va_list *args) {
     while (num != 0) {
         buffer[index++] = (num % 2) + '0';
         num /= 2;
-        int_count++;
     }
 
     while (index > 0) {
