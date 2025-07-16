@@ -16,7 +16,7 @@ format_specifier_t specifiers[] = {
  * _printf - Function that mimics printf.
  *
  * @format: Format specifier.
- * Return: 1 on success.
+ * Return: Number of characters printed.
  */
 
 int _printf(const char *format, ...) {
@@ -60,6 +60,7 @@ int _printf(const char *format, ...) {
             char_count++;
         }
     }
+    _putchar(-1);
     va_end(args);
     return (char_count);
 }

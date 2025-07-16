@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * struct format_specifier - Structure that holds a format specifier.
  * and its corresponding function to print the formatted output.

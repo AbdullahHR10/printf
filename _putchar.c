@@ -1,5 +1,7 @@
 #include <unistd.h>
 
+#define BUFFER_SIZE 1024
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -9,5 +11,23 @@
  */
 
 int _putchar(char c) {
-	return (write(1, &c, 1));
+    static char buffer[BUFFER_SIZE];
+    static int index = 0;
+
+	if (c == -1) {
+		if (index > 0) {
+			write(1, buffer, index);
+			index = 0;
+		}
+		return (0);
+	}
+
+	buffer[index++] = c;
+
+    if (index == BUFFER_SIZE) {
+        write(1, buffer, BUFFER_SIZE);
+        index = 0;
+    }
+
+	return (1);
 }
