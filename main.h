@@ -30,5 +30,6 @@ int print_unsigned(va_list *args);
 int print_octal(va_list *args);
 int print_hex_lower(va_list *args);
 int print_hex_upper(va_list *args);
+int print_special_string(va_list *args);
 
 #endif
